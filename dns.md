@@ -45,6 +45,16 @@ Quad9: 9.9.9.9
 Quad9: 149.112.112.112
 ```
 
+## Root DNS Server
+- Root DNS Servers: `https://www.iana.org/domains/root/servers`
+- They are backbone of internet
+- their job is to redirect you to the correct Top Level Domain Server
+
+## Top Level Domain DNS Server
+holds records for name servers
+- gTLD (generic)
+- ccTLD (country code)
+
 ## DNS Record
 - DNS records hold the information about which IP addresses match which domains
 - DNS records all come with a TTL (Time To Live) value. This value is a number represented in seconds that the response should be saved for locally until you have to look it up again.
@@ -120,11 +130,37 @@ At minimum, the zone file must specify the Start of Authority (SOA) record with 
 
 > NOTE: In the zone file, domain names that end with a full stop character (such as "example.com." in the above example) are fully qualified while those that do not end with a full stop are relative to the current origin (which is why www in the above example refers to `www.example.com`).
 
-
+## Namespace
+- the internet is a single DNS name space, within which all network devices with a DNS name can be resolved to a particular address
+- namespaces: ".", ".com", ".net"
+- The domain namespace of the internet is organized into a hierarchical layout of subdomains below the DNS root domain.(wikipedia)
 
 ## Zone
+- an administrative sub-division of the DNS namespace
 
+## Zone Transfer
+- copy contents of zone file on a primary dns server to secondary dns server
+- Use AXFR Protocol
+- replicate DNS records across DNS servers (avoid the need to edit information on multiple DNS servers, you can edit information on one server and use AXFR to copy information to other servers)
+- DNS servers host zones. A DNS zone is a portion of the domain name space that is served by a DNS server. For example, example.com with all its subdomains may be a zone. However, second.example.com may also be a separate zone.
 
+## Why only 13 root servers?
+- because limitations of original DNS Infrastructure
+- `https://securitytrails.com/blog/dns-root-servers`
+
+## domain registrars
+They provides domain name registrations to the general public
+- GoDaddy
+- NameCheap
+
+## Registry
+- registries are companies that manage Top Level Domains (TLDs)
+
+## What does it mean to ‘own’ a domain name?
+Although people often speak of buying and owning domain names, the truth is that registries own all of their domain names and registrars simply offer customers the opportunity to reserve those domain names for a limited amount of time.
+The maximum reservation period for a domain name is ten years. A user can hold onto a domain name for longer than ten years, as registrars usually let them keep renewing their reservation indefinitely. But the user never truly owns the domain; they just lease it.
+
+> NOTE: .local belongs to mDNS(Multicast DNS)
 
 References
 ```
