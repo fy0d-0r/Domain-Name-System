@@ -63,6 +63,7 @@ $ORIGIN example.com.	; designates the start of this zone file in the namespace
        IN  NS     ns2.smokeyjoe.com. ; external to domain
        IN  MX  10 mail.another.com. ; external mail provider
 ; server host definitions
+; @ represents zone origin
 ns1    IN  A      192.168.0.1  ;name server definition     
 www    IN  A      192.168.0.2  ;web server definition
 ftp    IN  CNAME  www.example.com.  ;ftp server definition
@@ -85,6 +86,7 @@ Resource Records (RR)
 name	ttl	record class	record type	record data
 ```
 ttl field in the above example is omitted since their ttl values are assigned implicitly by $TTL directive.
+'@' represents the zone origin
 
 Directives
 - Directives are control entries that affect the rest of the zone file. The first field of a directive consists of a dollar sign followed by a keyword.
