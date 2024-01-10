@@ -146,6 +146,15 @@ At minimum, the zone file must specify the Start of Authority (SOA) record with 
 ## Zone
 - an administrative sub-division of the DNS namespace
 
+## Zone vs Domain
+- The distinction between domains and zones is that domains provide a logical structure to the DNS name space while zones provide an administrative structure
+- Domain name servers store information about part of the domain name space called a zone. The name server is authoritative for a particular zone. A single name server can be authoritative for many zones.
+- A zone is simply a portion of a domain. For example, the Domain Microsoft.com may contain all of the data for Microsoft.com, Marketing.microsoft.com and Development.microsoft.com. However, the zone Microsoft.com contains only information for Microsoft.com and references to the authoritative name servers for the subdomains.
+- The zone Microsoft.com can contain the data for subdomains of Microsoft.com if they have not been delegated to another server. For example, Marketing.microsoft.com may manage its own delegated zone. Development.microsoft.com may be managed by the parent, Microsoft.com.
+- If there are no subdomains, then the zone and domain are essentially the same. In this case the zone contains all data for the domain
+- ref:`https://stackoverflow.com/questions/22440582/difference-between-a-dns-zone-and-dns-domain`
+
+
 ## Zone Transfer
 - copy contents of zone file on a primary dns server to secondary dns server
 - Use AXFR Protocol
