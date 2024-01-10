@@ -7,16 +7,27 @@ DNS is comprised logically of Domains but physically of Zones
 
 ## Terminologies
 > Recursive DNS Server
+> 
 > Name Server(Authoritative Server)
+> 
 > DNS Record
+> 
 > Root DNS Servers
+> 
 > TLD Server
+> 
 > Record Types
+> 
 > Namespace
+> 
 > Zone
+>
 > Zone Transfer
+> 
 > Domain
+> 
 > Domain Registrars
+> 
 > Registry
 
 ## Recursive DNS Server
