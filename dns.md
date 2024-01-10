@@ -12,6 +12,7 @@ Name Server(Authoritative Server)
 DNS Record
 Root DNS Servers
 TLD Server
+DNS Record
 Record Types
 Namespace
 Zone
