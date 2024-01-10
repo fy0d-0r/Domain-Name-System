@@ -22,6 +22,14 @@ Domain
 Domain Registrars
 Registry
 ```
+DNS Query Steps
+
+```
+Step 1: recursive server <-> Root DNS Server
+Step 2: recursive server <-> TLD Server
+Step 3: recursive server <-> Name Server
+```
+
 
 ## Recursive DNS Server
 Recursive DNS Server communicates with several other DNS servers to hunt down an ip address and return it to the client.
