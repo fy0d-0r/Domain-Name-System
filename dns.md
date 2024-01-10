@@ -154,6 +154,7 @@ At minimum, the zone file must specify the Start of Authority (SOA) record with 
 - If there are no subdomains, then the zone and domain are essentially the same. In this case the zone contains all data for the domain
 - ref:`https://stackoverflow.com/questions/22440582/difference-between-a-dns-zone-and-dns-domain`
 
+![zone-domain](https://github.com/fy0d-0r/Domain-Name-System/blob/main/images/zone_domain.png)
 
 ## Zone Transfer
 - copy contents of zone file on a primary dns server to secondary dns server
