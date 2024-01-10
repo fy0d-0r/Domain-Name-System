@@ -55,7 +55,15 @@ holds records for name servers
 - gTLD (generic)
 - ccTLD (country code)
 
-## DNS Record
+## Name Server(Authoritative Server)
+- Works on tcp port 53
+- Names servers have "zone files" which are but text files that holds Resource Record informations
+- Name server stores "DNS records" for a particular domain name
+- A name server is a library, and "DNS records" are the catalog.
+- You'll often find multiple nameservers for a domain name to act as a backup in case one goes down.
+- name server sents dns records back to recursive server
+
+## DNS Record (Resource Record)
 - DNS records hold the information about which IP addresses match which domains
 - DNS records all come with a TTL (Time To Live) value. This value is a number represented in seconds that the response should be saved for locally until you have to look it up again.
 - DNS records are stored in the zone file
