@@ -138,7 +138,7 @@ At minimum, the zone file must specify the Start of Authority (SOA) record with 
 
 > NOTE: In the zone file, domain names that end with a full stop character (such as "example.com." in the above example) are fully qualified while those that do not end with a full stop are relative to the current origin (which is why www in the above example refers to `www.example.com`).
 
-## Namespace
+## Namespace (Domain Namespace or Domain)
 - the internet is a single DNS name space, within which all network devices with a DNS name can be resolved to a particular address
 - namespaces: ".", ".com", ".net"
 - The domain namespace of the internet is organized into a hierarchical layout of subdomains below the DNS root domain.(wikipedia)
@@ -148,7 +148,7 @@ At minimum, the zone file must specify the Start of Authority (SOA) record with 
 
 ## Zone vs Domain
 - The distinction between domains and zones is that domains provide a logical structure to the DNS name space while zones provide an administrative structure
-- Domain name servers store information about part of the domain name space called a zone. The name server is authoritative for a particular zone. A single name server can be authoritative for many zones.
+- Domain name servers store information about **part of the domain name space called a zone**. The name server is authoritative for a particular zone. A single name server can be authoritative for many zones.
 - A zone is simply a portion of a domain. For example, the Domain Microsoft.com may contain all of the data for Microsoft.com, Marketing.microsoft.com and Development.microsoft.com. However, the zone Microsoft.com contains only information for Microsoft.com and references to the authoritative name servers for the subdomains.
 - The zone Microsoft.com can contain the data for subdomains of Microsoft.com if they have not been delegated to another server. For example, Marketing.microsoft.com may manage its own delegated zone. Development.microsoft.com may be managed by the parent, Microsoft.com.
 - If there are no subdomains, then the zone and domain are essentially the same. In this case the zone contains all data for the domain
