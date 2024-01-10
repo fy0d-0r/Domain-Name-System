@@ -23,7 +23,7 @@ Domain Registrars
 Registry
 ```
 DNS Query Steps
-
+![dns_query_steps](https://github.com/fy0d-0r/Domain-Name-System/blob/main/images/Screenshot-2022-10-17-at-5.27.27-PM.png)
 ```
 Step 1: recursive server <-> Root DNS Server
 Step 2: recursive server <-> TLD Server
