@@ -75,11 +75,28 @@ fred   IN  A      192.168.0.4
 
 - A zone file is a sequence of line-oriented entries, each of which is either a directive or a text description that defines a single resource record (RR). An entry is composed of fields separated by any combination of white space (tabs and spaces), and ends at a line boundary except inside a quoted string field value or a pair of enclosing formatting parentheses. Any line may end with comment text preceded by a semicolon, and the file may also contain any number of blank lines.
 - Entries may occur in any order in a zone file, with some exceptions.
+
+Directives
 - Directives are control entries that affect the rest of the zone file. The first field of a directive consists of a dollar sign followed by a keyword.
 ```
 $ORIGIN		- $ORIGIN is followed by a domain name to be used as the origin for subsequent relative domain names.
 $TTL		- is followed by a number to be used as the default TTL (time-to-live).
 ```
+
+```
+name	ttl	record class	record type	record data
+```
+ttl field in the above example is omitted since their ttl values are assigned implicitly by $TTL directive.
+
+Record Class
+- The record class field indicates the namespace of the record information
+- The most commonly used namespace is that of the Internet, indicated by parameter IN
+
+SOA (Start of Authority)
+- At minimum, the zone file must specify the Start of Authority (SOA) record with the name of the authoritative master name server for the zone and the email address of someone responsible for management of the name server
+
+> NOTE: In the zone file, domain names that end with a full stop character (such as "example.com." in the above example) are fully qualified while those that do not end with a full stop are relative to the current origin (which is why www in the above example refers to www.example.com).
+
 
 
 ## Zone
