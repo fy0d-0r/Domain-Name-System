@@ -102,7 +102,7 @@ Record Class
 SOA (Start of Authority)
 - At minimum, the zone file must specify the Start of Authority (SOA) record with the name of the authoritative master name server for the zone and the email address of someone responsible for management of the name server
 
-> NOTE: In the zone file, domain names that end with a full stop character (such as "example.com." in the above example) are fully qualified while those that do not end with a full stop are relative to the current origin (which is why www in the above example refers to www.example.com).
+> NOTE: In the zone file, domain names that end with a full stop character (such as "example.com." in the above example) are fully qualified while those that do not end with a full stop are relative to the current origin (which is why www in the above example refers to `www.example.com`).
 
 
 
