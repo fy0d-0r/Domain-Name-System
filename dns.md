@@ -47,6 +47,8 @@ Quad9: 149.112.112.112
 - Zone file is a text file that describes a DNS zone.
 - A DNS zone is a subset, often a single domain, of the hierarchical domain name structure of the DNS.
 - The zone file contains mappings between domain names and IP addresses and other resources, organized in the form of text representations of resource records (RR)
+
+### Zone File Format
 ```
 $TTL	86400 ; 24 hours could have been written as 24h or 1d
 ; $TTL used for all RRs without explicit TTL value
@@ -69,5 +71,29 @@ ftp    IN  CNAME  www.example.com.  ;ftp server definition
 bill   IN  A      192.168.0.3
 fred   IN  A      192.168.0.4 
 ```
+- The format of a zone file is defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1).
+- This format was originally used by the "Berkeley Internet Name Domain" (BIND) software package, but has been widely adopted by other DNS server software.
+
+- A zone file is a sequence of line-oriented entries, each of which is either a directive or a text description that defines a single resource record (RR). An entry is composed of fields separated by any combination of white space (tabs and spaces), and ends at a line boundary except inside a quoted string field value or a pair of enclosing formatting parentheses. Any line may end with comment text preceded by a semicolon, and the file may also contain any number of blank lines.
+- Entries may occur in any order in a zone file, with some exceptions.
+- Directives are control entries that affect the rest of the zone file. The first field of a directive consists of a dollar sign followed by a keyword.
+```
+$ORIGIN		- $ORIGIN is followed by a domain name to be used as the origin for subsequent relative domain names.
+$TTL		- is followed by a number to be used as the default TTL (time-to-live).
+```
+
 
 ## Zone
+
+## Resource Record (RR)
+- RR, is the unit of information entry in DNS zone files
+
+
+References
+```
+rfc:1035
+rfc:1034
+```
+```
+https://en.wikipedia.org/wiki/Zone_file
+```
