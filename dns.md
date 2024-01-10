@@ -73,8 +73,18 @@ fred   IN  A      192.168.0.4
 - The format of a zone file is defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1).
 - This format was originally used by the "Berkeley Internet Name Domain" (BIND) software package, but has been widely adopted by other DNS server software.
 
+- A DNS zone file is constructed using Resource Records (RRs) and Directives. The text representation of these records are stored in zone files.
 - A zone file is a sequence of line-oriented entries, each of which is either a directive or a text description that defines a single resource record (RR). An entry is composed of fields separated by any combination of white space (tabs and spaces), and ends at a line boundary except inside a quoted string field value or a pair of enclosing formatting parentheses. Any line may end with comment text preceded by a semicolon, and the file may also contain any number of blank lines.
 - Entries may occur in any order in a zone file, with some exceptions.
+
+
+Resource Records (RR)
+- Resource Record is the unit of information entry in DNS zone files
+- The first Resource Record must be the SOA (Start of Authority) record. The generic format is described below.
+```
+name	ttl	record class	record type	record data
+```
+ttl field in the above example is omitted since their ttl values are assigned implicitly by $TTL directive.
 
 Directives
 - Directives are control entries that affect the rest of the zone file. The first field of a directive consists of a dollar sign followed by a keyword.
@@ -83,10 +93,7 @@ $ORIGIN		- $ORIGIN is followed by a domain name to be used as the origin for sub
 $TTL		- is followed by a number to be used as the default TTL (time-to-live).
 ```
 
-```
-name	ttl	record class	record type	record data
-```
-ttl field in the above example is omitted since their ttl values are assigned implicitly by $TTL directive.
+
 
 Record Class
 - The record class field indicates the namespace of the record information
@@ -101,8 +108,6 @@ SOA (Start of Authority)
 
 ## Zone
 
-## Resource Record (RR)
-- RR, is the unit of information entry in DNS zone files
 
 
 References
