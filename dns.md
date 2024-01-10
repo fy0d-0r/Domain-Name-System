@@ -6,29 +6,18 @@ DNS is comprised logically of Domains but physically of Zones
 - DNS uses TCP for Zone transfer and UDP for name(dns queries)
 
 ## Terminologies
-> Recursive DNS Server
-> 
-> Name Server(Authoritative Server)
-> 
-> DNS Record
-> 
-> Root DNS Servers
-> 
-> TLD Server
-> 
-> Record Types
-> 
-> Namespace
-> 
-> Zone
->
-> Zone Transfer
-> 
-> Domain
-> 
-> Domain Registrars
-> 
-> Registry
+Recursive DNS Server
+Name Server(Authoritative Server)
+DNS Record
+Root DNS Servers
+TLD Server
+Record Types
+Namespace
+Zone
+Zone Transfer
+Domain
+Domain Registrars
+Registry
 
 ## Recursive DNS Server
 Recursive DNS Server communicates with several other DNS servers to hunt down an ip address and return it to the client.
