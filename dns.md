@@ -9,17 +9,16 @@ DNS is comprised logically of Domains but physically of Zones
 ```
 Recursive DNS Server
 Name Server(Authoritative Server)
-DNS Record
-Zone File
 Root DNS Servers
 TLD Server
+Zone File
+Resource Record (RR)
 DNS Record
 Record Types
 Namespace
 Zone
 Zone Transfer
 Domain
-Resource Record (RR)
 Domain Registrars
 Registry
 ```
@@ -95,14 +94,21 @@ $ORIGIN		- $ORIGIN is followed by a domain name to be used as the origin for sub
 $TTL		- is followed by a number to be used as the default TTL (time-to-live).
 ```
 
-
-
 Record Class
 - The record class field indicates the namespace of the record information
 - The most commonly used namespace is that of the Internet, indicated by parameter IN
 
-SOA (Start of Authority)
-- At minimum, the zone file must specify the Start of Authority (SOA) record with the name of the authoritative master name server for the zone and the email address of someone responsible for management of the name server
+
+Record Types: 
+- A - Returns a 32-bit IPv4 address, most commonly used to map hostnames to an IP address of the host
+- AAAA - Returns a 128-bit IPv6 address, most commonly used to map hostnames to an IP address of the host.
+- CNAME(canonical name) - points a domain name (an alias) to another domain(domain name to domain name)
+- MX (returns Mail Exchange servers)
+- TXT
+- NS - specifies the authoritative DNS server for a domain
+- PTR record - A pointer record provides a domain name for reverse lookup. It's the opposite of an "A" record as it provides the domain name linked to an IP address instead of the IP address for a domain.
+- SOA (Start of Authority) - Specifies authoritative information about a DNS zone, including the primary name server, the email of the domain administrator, the domain serial number, and several timers relating to refreshing the zone.
+At minimum, the zone file must specify the Start of Authority (SOA) record with the name of the authoritative master name server for the zone and the email address of someone responsible for management of the name server
 
 > NOTE: In the zone file, domain names that end with a full stop character (such as "example.com." in the above example) are fully qualified while those that do not end with a full stop are relative to the current origin (which is why www in the above example refers to `www.example.com`).
 
