@@ -32,7 +32,7 @@ Step 3: recursive server <-> Name Server
 
 
 ## Recursive DNS Server
-Recursive DNS Server communicates with several other DNS servers to hunt down an ip address and return it to the client.
+Recursive DNS Server(DNS Resolver) communicates with several other DNS servers to hunt down an ip address and return it to the client.
 The Google DNS server (8.8.8.8) is in fact the recursive dns server hosted by Google.
 ### Public Recursive DNS Servers
 ```
