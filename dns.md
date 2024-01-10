@@ -50,9 +50,8 @@ Quad9: 149.112.112.112
 
 ### Zone File Format
 ```
-$TTL	86400 ; 24 hours could have been written as 24h or 1d
-; $TTL used for all RRs without explicit TTL value
-$ORIGIN example.com.
+$TTL	86400		; $TTL used for all RRs without explicit TTL value
+$ORIGIN example.com.	; designates the start of this zone file in the namespace
 @  1D  IN  SOA ns1.example.com. hostmaster.example.com. (
 			      2002022401 ; serial
 			      3H ; refresh
